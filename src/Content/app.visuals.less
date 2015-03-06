@@ -1,0 +1,194 @@
+﻿@import "app.vars.less";
+
+.modal-backdrop {
+  opacity: 1;
+}
+
+.badge-small {
+  padding: 3px 8px;
+}
+
+.badge-default {
+  background-color: @default-color;
+}
+
+.badge-primary {
+  background-color: @primary-color;
+}
+
+.badge-info {
+  background-color: @info-color;
+}
+
+.badge-warning {
+  background-color: @warning-color;
+}
+
+.badge-danger {
+  background-color: @danger-color;
+}
+
+.badge-success {
+  background-color: @success-color;
+}
+
+.badge-rsui {
+  background-color: @rsui-blue;
+}
+
+/* Callout */
+
+.callout {
+  margin: 0 0 35px 0;
+  padding: 20px;
+  border-left: 3px solid #eee;
+}
+
+.callout h5 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout code {
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.callout-default {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+.callout-default h5 {
+  color: #555;
+}
+
+.callout-danger {
+  background-color: #fdf7f7;
+  border-color: #D65C4F;
+}
+
+.callout-danger h5 {
+  color: #D65C4F;
+}
+
+.callout-warning {
+  background-color: #fcf8f2;
+  border-color: #E7804F;
+}
+
+.callout-warning h5 {
+  color: #E7804F;
+}
+
+.callout-info {
+  background-color: #f2f7f9;
+  border-color: #1992C2;
+}
+
+.callout-info h5 {
+  color: #1992C2;
+}
+
+.callout-success {
+  background-color: #f4faf5;
+  border-color: #239169;
+}
+
+.callout-success h5 {
+  color: #239169;
+}
+
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt15 {
+  margin-top: 15px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.dropdown-menu.dropdown-menu-center,
+.dropup .dropdown-menu.dropdown-menu-center {
+  right: 50%;
+  min-width: 100%;
+
+  > li:first-child:after {
+    left: auto;
+    right: 50.5%;
+  }
+
+
+  > li:first-child:before {
+    left: auto;
+    right: 50%;
+  }
+}
+
+
+.nav-pills.nav-justified .dropdown-menu.dropdown-menu-center {
+  margin-right: 4px;
+}
+
+.dropdown-menu-center {
+  right: -1px;
+}
+
+accordion,
+div[accordion] {
+
+  .panel-title {
+    width: 100%;
+
+    > a {
+      display: block;
+    }
+  }
+
+  .panel-primary {
+
+    a:hover {
+      color: darken( @sidebar-background-color, 100%);
+    }
+  }
+
+  .panel-danger {
+
+    a:hover {
+      color: darken( @sidebar-background-color, 100%);
+    }
+  }
+
+  .panel-success {
+
+    a:hover {
+      color: darken( @sidebar-background-color, 100%);
+    }
+  }
+
+  .panel-info {
+
+    a:hover {
+      color: darken( @sidebar-background-color, 100%);
+    }
+  }
+
+  .panel-warning {
+
+    a:hover {
+      color: darken( @sidebar-background-color, 100%);
+    }
+  }
+}

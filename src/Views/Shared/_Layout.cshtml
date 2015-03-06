@@ -1,0 +1,27 @@
+﻿@using System.Configuration
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+  <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title data-ng-bind="title"></title>
+  @Styles.Render("~/Content/css")
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  @Scripts.Render("~/bundles/modernizr")
+</head>
+<body ng-class="bodyClasses" ng-cloak>
+  <!--[if lt IE 9]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  @RenderBody()
+	<input type="hidden" id="apiUrl" value="@ConfigurationManager.AppSettings["apiUrl"]" />
+	<input type="hidden" id="appUrl" value="@ConfigurationManager.AppSettings["appUrl"]" />
+	<input type="hidden" id="formsServiceUrl" value="@ConfigurationManager.AppSettings["FormsServiceUrl"]" />
+	<div class="ajax-loader" ui-ajax-spinner><div class="spinner"></div></div>
+  @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap", "~/bundles/plugins", "~/bundles/angular", "~/bundles/app")
+  @RenderSection("scripts", required: false)
+  <script src="~/signalr/hubs"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<div class="navbar navbar-inverse" role="navigation" style="position: relative; z-index: 99;">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="javascript:void(0);"><img src="/Content/images/RSUI-Logo-White-53x30.png" alt="RSUI"><span ng-bind="appName"></span></a>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu-right">
+      <span class="sr-only">Toggle navbar</span>
+      <i class="icon-grid3"></i>
+    </button>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu-left">
+      <span class="sr-only">Toggle navigation</span>
+      <i class="icon-paragraph-justify2"></i>
+    </button>
+  </div>
+  <ul class="nav navbar-nav collapse" id="navbar-menu-left">
+    <li><a ui-sref="app.home"><i class="icon-home3"></i> Home</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-steps"></i> Getting Started <b class="caret"></b></a>
+      <ul class="dropdown-menu icons-right dropdown-menu-left">
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.app-conventions">App Conventions</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.ui-router">Angular UI-Router</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.directives">Angular Directives</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.sidebar-navigation">Sidebar Navigation</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.top-navigation">Top Navigation</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.css-and-less">CSS and LESS</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.theme-components">Theme Components</a></li>
+        <li role="presentation" class="divider"></li>
+        <li>
+          <div class="col-xs-6">
+            <div class="col-xs-6">
+              <ul>
+                <li role="presentation" class="dropdown-header">Page Layouts</li>
+                <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar">Navbar</a></li>
+                <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed">Navbar Fixed</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-6">
+              <ul>
+                <li role="presentation" class="dropdown-header">Page Layouts</li>
+                <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar">Navbar</a></li>
+                <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed">Navbar Fixed</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-sidebar">Navbar & Sidebar</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-sidebar-right">Navbar & Sidebar Right</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed-sidebar">Navbar Fixed & Sidebar</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed-sidebar-fixed">Navbar Fixed & Sidebar Fixed</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed-sidebar-right">Navbar Fixed & Sidebar Right</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed-sidebar-right-fixed">Navbar Fixed & Sidebar Right Fixed</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar">Navbar</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed">Navbar Fixed</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.sidebar">Sidebar</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.sidebar-fixed">Sidebar Fixed</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.sidebar-right">Sidebar Right</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.sidebar-right-fixed">Sidebar Right FIxed</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.page-sections">Page Sections</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-insert-template"></i> Interface Components <b class="caret"></b></a>
+      <ul class="dropdown-menu icons-right dropdown-menu-left">
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.visuals">Visuals</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.navs">Navs & Dropdowns</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.panel-options">Panel Options</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.navbars">Navbars</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.info-blocks">Info Blocks</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.icons">Icons</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.buttons">Buttons</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.calendar">Calendar</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.typography">Typography</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.media-gallery">Media Gallery</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.page-header-elements">Page Header Elements</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.content-grid">Content Grid</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right collapse" id="navbar-menu-right">
+    <li class="dropdown">
+      <a href="javascript: void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-paragraph-justify2"></i> Dropdown <b class="caret"></b></a>
+      <ul class="dropdown-menu icons-right dropdown-menu-right">
+        <li><a href="javascript: void(0);"><i class="icon-cogs"></i> This is a</a></li>
+        <li><a href="javascript: void(0);"><i class="icon-grid3"></i> Dropdown</a></li>
+        <li><a href="javascript: void(0);"><i class="icon-spinner7"></i> With right</a></li>
+        <li><a href="javascript: void(0);"><i class="icon-link"></i> Aligned icons</a></li>
+      </ul>
+    </li>
+  </ul>
+
+</div>

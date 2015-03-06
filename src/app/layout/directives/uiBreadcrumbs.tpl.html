@@ -1,0 +1,8 @@
+﻿<div class="col-xs-12 breadcrumb-line">
+  <ul class="breadcrumb">
+    <li ng-repeat="crumb in breadcrumbs" ng-class="{ active: $last || !crumb.route }">
+      <a ui-sref="{{ crumb.route }}" ng-if="!$last && crumb.route">{{ crumb.displayName }}</a>
+      <span ng-show="$last || !crumb.route">{{ crumb.displayName }}</span>
+    </li>
+  </ul>
+</div>

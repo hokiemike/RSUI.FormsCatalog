@@ -1,0 +1,16 @@
+﻿#toast-container > div {
+  opacity: 0.9;
+}
+.toast-error {
+  background-color: #D65C4F;
+}
+.toast-info {
+  background-color: #1f4fb9;
+}
+.toast-warning {
+  background-color: #ff6a00;
+}
+.toast-success {
+  background-color: #007623;
+}
+/*# sourceMappingURL=app.toastr.css.map */

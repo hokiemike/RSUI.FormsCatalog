@@ -1,0 +1,36 @@
+﻿<div class="navbar navbar-inverse" role="navigation" style="position: relative; z-index: 99;">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="javascript:void(0);"><img src="/Content/images/RSUI-Logo-White-53x30.png" alt="RSUI"><span ng-bind="appName"></span></a>
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-search">
+			<span class="sr-only">Toggle navbar form</span>
+			<i class="icon-search3"></i>
+		</button>
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu-right">
+			<span class="sr-only">Toggle navigation</span>
+			<i class="icon-paragraph-justify2"></i>
+		</button>
+	</div>
+	<form class="navbar-form navbar-left collapse ng-pristine ng-valid" role="search" id="navbar-search">
+		<div class="form-group">
+			<select data-placeholder="Choose Department..." ui-select2="" style="width:220px" ng-model="navbar.department" class="select-full" tabindex="2" ng-cloak>
+				<option value=""></option>
+				<option value="1900">Professional Liability</option>
+				<option value="1800">GL</option>
+				<option value="300">Directors & Officers Liability</option>
+				<option value="100">Umbrella/Excess</option>
+			</select>
+		</div>
+	</form>
+	<ul class="nav navbar-nav navbar-right collapse" id="navbar-menu-right">
+		<li class="dropdown">
+			<a href="javascript: void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user3"></i> {{navbar.User.FullName}} <b class="caret"></b></a>
+			<ul class="dropdown-menu icons-right dropdown-menu-right">
+				<li>
+					<div class="caption text-center">
+						<h6>{{navbar.User.FullName}}<br /><small>{{navbar.User.Department.Name}}: {{navbar.User.PrimaryTeam.Name}}</small></h6>
+					</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>

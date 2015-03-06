@@ -1,0 +1,117 @@
+﻿<div class="tabbable page-tabs">
+  <ul class="nav nav-tabs border" ui-tabs>
+    <li class="active"><a href="#global" data-toggle="tab"><i class="icon-globe"></i> Global Setup</a></li>
+    <li><a href="#preset" data-toggle="tab"><i class="icon-quill2"></i> Preset</a></li>
+    <li><a href="#state" data-toggle="tab"><i class="icon-settings"></i> State Settings For This Page</a></li>
+    <li><a href="#settings" data-toggle="tab"><i class="icon-wrench2"></i> Other Layout Settings</a></li>
+ </ul>
+  <div class="tab-content border">
+    <div class="tab-pane active fade in" id="global">
+      <div>When creating your web application, you can set the default layour simply by changing the preset in app.routes.js. When doing this, all pages will inherient the states and you simply need to change our the main-content with your page.</p></div>
+      <h5 class="text-info mt20">Adjust Line #4 as seen below:</h5>
+      <pre class="prettyprint linenums" starting-line-number="4">
+var preset = settings.presets.sidebarRight;
+</pre>
+      <h5 class="text-primary mt20">Here is the complete code for the initial state 'app':</h5>
+      <pre class="prettyprint linenums">
+angular.module('app.routes', ['ui.router'])
+  .config(['$stateProvider', '$urlRouterProvider', 'LayoutSettings', function ($stateProvider, $urlRouterProvider, settings) {
+    $urlRouterProvider.otherwise('/');
+    var preset = settings.presets.sidebarRight;
+    $stateProvider
+      .state('app', {
+        'abstract': true,
+        views: {
+          'container@': preset.views.container,
+          'navbar@app': preset.views.navbar,
+          'sidebar@app': preset.views.sidebar,
+          'page-header@app': preset.views.pageHeader,
+          'breadcrumbs@app': preset.views.breadcrumbs,
+          'footer@app': preset.views.footer
+        },
+        data: {
+          classes: preset.classes,
+          security: {
+            auth: false
+          },
+          pageInfo: {
+            title: 'App'
+          },
+          breadcrumb: {
+            proxy: 'app.home'
+          }
+        }
+      });
+  }]);
+</pre>
+      <h5 class="mt20"><i class="icon-info2 text-info"></i><span class="text-info"> NOTE:</span> This is the default layout when first creating your project.</h5>
+    </div>
+    <div class="tab-pane fade in" id="preset">
+      <pre class="prettyprint linenums">
+presets: {
+  sidebarRight: {
+    classes: {
+      body: 'sidebar-only sidebar-right',
+      sidebar: 'navigation navigation-icons-left'
+    },
+    views: {
+      container: {
+        templateUrl: '/app/views/layout/layout-sidebar.tpl.html'
+      },
+      sidebar: {
+        templateUrl: '/app/views/layout/sidebars/layout-sidebars-sidebar.tpl.html',
+        controller: 'LayoutSidebarCtrl as sidebar'
+      },
+      pageHeader: {
+        templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+      },
+      breadcrumbs: {
+        templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+      },
+      footer: {
+        templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+      }
+    }
+  }
+}
+</pre>
+    </div>
+    <div class="tab-pane fade in" id="state">
+      <pre class="prettyprint linenums">
+(function (module) {
+  module.config(['$stateProvider', '$urlRouterProvider', 'LayoutSettings', function ($stateProvider, $urlRouterProvider, layouts) {
+    $stateProvider
+      .state('app.gettingStarted.page-layouts.sidebar-right', {
+        url: '/sidebar-right',
+        views: {
+          'container@': layouts.presets.sidebarRight.views.container,
+          'sidebar@app.gettingStarted.page-layouts.sidebar-right': layouts.presets.sidebarRight.views.sidebar,
+          'page-header@app.gettingStarted.page-layouts.sidebar-right': layouts.presets.sidebarRight.views.pageHeader,
+          'breadcrumbs@app.gettingStarted.page-layouts.sidebar-right': layouts.presets.sidebarRight.views.breadcrumbs,
+          'footer@app.gettingStarted.page-layouts.sidebar-right': layouts.presets.sidebarRight.views.footer,
+          'main-content@app.gettingStarted.page-layouts.sidebar-right': {
+            templateUrl: '/app/views/gettingStarted/pageLayouts/sidebar-right.tpl.html',
+            controller: 'HomeCtrl as home'
+          }
+        },
+        data: {
+          classes: layouts.presets.sidebarRight.classes,
+          pageInfo: {
+            seo: {
+              description: 'Bootstrap & Jquery UI components',
+              keywords: 'Bootstrap,Jquery UI'
+            },
+            title: 'Sidebar Right',
+            description: 'Information on the Included Page Layouts and How to Use Them.'
+          }
+        }
+      });
+  }]);
+})(angular.module('gettingStarted.routes', ['ui.router']));
+</pre>
+    </div>
+    <div class="tab-pane fade in" id="settings">
+      <div ng-include="'app/views/gettingStarted/pageLayouts/settings.tpl.html'"></div>
+    </div>
+  </div>
+</div>

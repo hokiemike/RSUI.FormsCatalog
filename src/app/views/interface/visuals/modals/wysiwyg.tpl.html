@@ -1,0 +1,17 @@
+﻿<div id="editor_modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><i class="icon-accessibility"></i> WYSIWYG editor inside modal</h4>
+      </div>
+      <div class="modal-body with-padding">
+        <textarea class="editor form-control" placeholder="Enter text ..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="vm.closeModal('editor')"><i class="icon-cancel-circle"></i> Close</button>
+        <button class="btn btn-primary" ng-click="vm.closeModal('editor',{action: 'WYSIWYG Editor Saved'})"><i class="icon-checkmark-circle"></i> Save</button>
+      </div>
+    </div>
+  </div>
+</div>

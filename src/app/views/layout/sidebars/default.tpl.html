@@ -1,0 +1,118 @@
+﻿<div class="sidebar-content">
+  <div class="user-menu dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+      <div class="user-image-icon"><i class="icon-user3" style="font-size: 36px;"></i></div>
+      <div class="user-info">
+        <span>Welcome</span> {{sidebar.User.FullName}}
+      </div>
+    </a>
+    <div class="popup dropdown-menu dropdown-menu-right">
+      <div class="thumbnail">
+        <div class="thumb">
+          <div><i class="icon-user3"></i></div>
+          <div class="thumb-options">
+            <span>
+              <a href="javascript:void(0);" class="btn btn-icon btn-success"><i class="icon-pencil"></i></a>
+              <a href="javascript:void(0);" class="btn btn-icon btn-success"><i class="icon-remove"></i></a>
+            </span>
+          </div>
+        </div>
+
+        <div class="caption text-center">
+          <h6>{{sidebar.User.FullName}} <small>{{sidebar.User.Department}}: {{sidebar.User.PrimaryTeam}}</small></h6>
+        </div>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item"><i class="icon-pencil3 text-muted"></i> My posts <span class="label label-success">289</span></li>
+        <li class="list-group-item"><i class="icon-people text-muted"></i> Users online <span class="label label-danger">892</span></li>
+        <li class="list-group-item"><i class="icon-stats2 text-muted"></i> Reports <span class="label label-primary">92</span></li>
+        <li class="list-group-item"><i class="icon-stack text-muted"></i> Balance <h5 class="pull-right text-danger">$45.389</h5></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Main navigation -->
+  <ul ng-class="sidebarClasses" ui-sidebar>
+    <li>
+      <a ui-sref-active="active current-state" href ui-sref="app.home"><span>Home</span><i class="icon-home3"></i></a>
+    </li>
+    <li>
+      <a href="javascript:void(0);"><span>Getting Started</span><i class="icon-steps"></i><span class="badge pull-right badge-rsui badge-small">8</span></a>
+      <ul>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.app-conventions">App Conventions</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.ui-router">Angular UI-Router</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.directives">Angular Directives</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.sidebar-navigation">Sidebar Navigation</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.top-navigation">Top Navigation</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.css-and-less">CSS and LESS</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.theme-components">Theme Components</a></li>
+        <li>
+          <a href="javascript:void(0);">Page Layouts</a>
+          <ul>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-sidebar">Navbar & Sidebar</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-sidebar-right">Navbar & Sidebar Right</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed-sidebar">Navbar Fixed & Sidebar</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed-sidebar-fixed">Navbar Fixed & Sidebar Fixed</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed-sidebar-right">Navbar Fixed & Sidebar Right</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed-sidebar-right-fixed">Navbar Fixed & Sidebar Right Fixed</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar">Navbar</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.navbar-fixed">Navbar Fixed</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.sidebar">Sidebar</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.sidebar-fixed">Sidebar Fixed</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.sidebar-right">Sidebar Right</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.sidebar-right-fixed">Sidebar Right FIxed</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.page-layouts.page-sections">Page Sections</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:void(0);">Error Pages</a>
+          <ul>
+            <li><a ui-sref-active="active current-state" ui-sref="app.gettingStarted.special-pages.error">Errors</a></li>
+            <li><a ui-sref-active="active current-state" ui-sref="app.404">404</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="javascript:void(0);"><span>Interface Components</span><i class="icon-insert-template"></i><span class="badge pull-right badge-rsui badge-small">12</span></a>
+      <ul>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.visuals">Visuals</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.navs">Navs & Dropdowns</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.panel-options">Panel Options</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.navbars">Navbars</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.info-blocks">Info Blocks</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.icons">Icons</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.buttons">Buttons</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.calendar">Calendar</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.typography">Typography</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.media-gallery">Media Gallery</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.page-header-elements">Page Header Elements</a></li>
+        <li><a ui-sref-active="active current-state" ui-sref="app.interface.content-grid">Content Grid</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="javascript:void(0);"><span>Sidebar Navigation levels</span> <i class="icon-stack"></i></a>
+      <ul>
+        <li><a href="javascript:void(0);">Second level first item</a></li>
+        <li>
+          <a href="javascript:void(0);">Second level second item</a>
+          <ul>
+            <li><a href="javascript:void(0);">Third level first item</a></li>
+            <li><a href="javascript:void(0);">Third level second item</a></li>
+            <li>
+              <a href="javascript:void(0);">Third level third item</a>
+              <ul>
+                <li><a href="javascript:void(0);">Fourth level first item</a></li>
+                <li><a href="javascript:void(0);">Fourth level second item</a></li>
+                <li><a href="javascript:void(0);">Fourth level third item</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:void(0);">Third level second item</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0);">Second level third item</a></li>
+      </ul>
+    </li>
+  </ul>
+  <!-- /main navigation -->
+</div>

@@ -1,0 +1,31 @@
+﻿<div id="form_modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="home.closeModal('comments')">&times;</button>
+        <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> {{home.formCommentEdit.Name}}</h4>
+      </div>
+      <!-- Form inside modal -->
+      <form action="#" role="form">
+        <div class="modal-body with-padding">
+          <div class="block-inner text-danger">
+            <h6 class="heading-hr">Viewing the comments of this form.</h6>
+          </div>
+          <div class="form-group">
+            <div class="row">
+	            <div class="col-sm-12">
+								<label>Form Comments and Usage</label>
+		            <div>
+									<div ng-bind="home.formCommentEdit.Comment"></div>
+		            </div>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn btn-warning" ng-click="home.closeModal('comments')"><i class="icon-cancel-circle"></i> Close</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

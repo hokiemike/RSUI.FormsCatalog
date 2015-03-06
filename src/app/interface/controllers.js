@@ -1,0 +1,1 @@
+﻿angular.module('interface.controllers', ['common.services']);

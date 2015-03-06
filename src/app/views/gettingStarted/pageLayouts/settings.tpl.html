@@ -1,0 +1,59 @@
+﻿<h4>Classes</h4>
+<pre class="prettyprint linenums">
+classes: {
+  body: {
+    navbarSidebar: '',
+    navbarSidebarRight: 'sidebar-right',
+    navbarFixed: 'navbar-fixed',
+    navbarFixedSidebarFixed: 'navbar-fixed sidebar-fixed',
+    navbarFixedSidebarRight: 'navbar-fixed sidebar-right',
+    navbarFixedSidebarRightFixed: 'navbar-fixed sidebar-right sidebar-fixed',
+    sidebarRight: 'sidebar-right',
+    sidebarRightFixed: 'sidebar-right sidebar-fixed',
+    blankPage: 'full-width page-condensed'
+  },
+  navbar: {
+    navbar: 'navbar navbar-inverse',
+    navbarFixed: 'navbar navbar-inverse navbar-fixed-top',
+  },
+  sidebar: {
+    sidebar: 'navigation',
+    sidebarLeftIcons: 'navigation navigation-icons-left'
+  }
+}
+</pre>
+<h4>Containers</h4>
+<pre class="prettyprint linenums">
+containers: {
+  navbar: {
+    templateUrl: '/app/views/layout/layout-navbar.tpl.html'
+  },
+  navbarSidebar: {
+    templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+  },
+  sidebar: {
+    templateUrl: '/app/views/layout/layout-sidebar.tpl.html'
+  }
+}
+</pre>
+<h4>Views</h4>
+<pre class="prettyprint linenums">
+views: {
+  navbars: {
+    'default': '/app/layout/navbars/layout-navbars-default.tpl.html'
+  },
+  sidebars: {
+    'default': '/app/layout/navbars/layout-sidebars-default.tpl.html',
+    sidebarOnly: '/app/layout/navbars/layout-sidebars-sidebar-only.tpl.html'
+  },
+  footers: {
+    'default': '/app/layout/navbars/layout-footers-default.tpl.html',
+  },
+  breadcrumbs: {
+    'default': '/app/layout/navbars/layout-breadcrumbs-default.tpl.html',
+  },
+  pageHeaders: {
+    'default': '/app/layout/navbars/layout-page-headers-default.tpl.html',
+  }
+}
+</pre>

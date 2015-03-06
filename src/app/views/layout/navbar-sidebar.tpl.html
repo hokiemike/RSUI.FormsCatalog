@@ -1,0 +1,18 @@
+﻿<div ui-view="navbar" ng-class="navbarClasses"></div>
+<div ui-view="sidebar" class="sidebar"></div>
+<div class="page-content">
+  <div class="page-content-inner">
+    <div class="row">
+      <div class="col-xs-12" ui-view="page-header"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" ui-view="breadcrumbs"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" ui-view="main-content"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" ui-view="footer"></div>
+    </div>
+  </div>
+</div>

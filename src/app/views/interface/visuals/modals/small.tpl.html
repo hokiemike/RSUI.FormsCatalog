@@ -1,0 +1,17 @@
+﻿<div id="small_modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><i class="icon-accessibility"></i> Small modal</h4>
+      </div>
+      <div class="modal-body with-padding">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="vm.closeModal('small')"><i class="icon-cancel-circle"></i> Close</button>
+        <button class="btn btn-primary" ng-click="vm.closeModal('small',{action: 'Small Saved'})"><i class="icon-checkmark-circle"></i> Save</button>
+      </div>
+    </div>
+  </div>
+</div>

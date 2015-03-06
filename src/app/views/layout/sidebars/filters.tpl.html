@@ -1,0 +1,26 @@
+﻿<div>
+	Document Types <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.docTypes.open, 'glyphicon-chevron-right': !status.docTypes.open}"></i>
+</div>
+<label>
+	<input type="checkbox" ng-change="home.toggleType()" ng-model="home.checkbox.documentType" /> {{home.checkbox.documentType ? 'Uncheck All' : 'Check All'}}
+</label>
+<div ng-repeat="group in home.docTypes track by $index">
+	<div ng-class="group.classes" ng-repeat="item in group.rowData track by $index">
+		<label>
+			<input type="checkbox" ng-change="home.typeToggled(item)" ng-model="item.Selected" /> {{item.DocType}}
+		</label>
+	</div>
+</div>
+<div >
+	Document Categories <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.subTypes.Open, 'glyphicon-chevron-right': !status.subTypes.Open}"></i>
+</div>
+<label>
+	<input type="checkbox" ng-change="home.toggleCategory()" ng-model=" home.checkbox.documentCategory" />  {{home.checkbox.documentCategory ? 'Uncheck All' : 'Check All'}}
+</label>
+<div ng-repeat="group in home.subTypes track by $index">
+	<div ng-class="group.classes" ng-repeat="item in group.rowData track by $index">
+		<label>
+			<input type="checkbox" ng-change="home.categoryToggled(item)" ng-model="item.Selected" /> {{item.Desc}}
+		</label>
+	</div>
+</div>

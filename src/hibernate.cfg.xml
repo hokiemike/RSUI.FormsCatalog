@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+
+  <session-factory>
+
+    <property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
+    <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
+    <property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
+    <property name="command_timeout">120</property>
+    <property name="max_fetch_depth">3</property>
+    <property name="default_batch_fetch_size">10</property>
+    <property name="adonet.batch_size">10</property>
+    <!-- <property name="use_reflection_optimizer">false</property> -->
+    <property name="cache.provider_class">NHibernate.Caches.SysCache.SysCacheProvider, NHibernate.Caches.SysCache</property>
+    <property name="cache.region_prefix">RSUI</property>
+    <property name="cache.use_query_cache">true</property>
+    <property name="generate_statistics">true</property>
+
+    <property name="current_session_context_class">RSUI.Common.Web.LazyWebSessionContext, RSUI.Common</property>
+
+
+    <property name="default_schema">dbo</property>
+    <property name="show_sql">true</property>
+
+    <mapping assembly="RSUI.Common" />
+    <!--<mapping assembly="RSUI.Claims.Data" />-->
+
+    <!-- Framework Domain Classes -->
+    <!--<class-cache class="RSUI.Common.Data.Branch, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.BranchFloor, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.Department, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.Employee, RSUI.Common" usage="read-write" />
+    <class-cache class="RSUI.Common.Data.EmployeeTeam, RSUI.Common" usage="read-write" />
+    <class-cache class="RSUI.Common.Data.EmployeeCalendarYear, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.EmployeePersonalContact, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.EmployeeStatus, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.EmployeeStatusHistory, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.EmployeeType, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.OrganizationalUnit, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.OtherEmployeeDepartment, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.SecGroup, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.SecGroupRole, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.SecGroupUser, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.SecRole, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.SecRoleUser, RSUI.Common" usage="read-only" />
+    <class-cache class="RSUI.Common.Data.SecUser, RSUI.Common" usage="read-only" />-->
+
+    <!-- Tasking Domain Classes -->
+    <!--
+        <class-cache class="RSUI.Claims.Data.Domain.Department, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.ProfitCenter, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.TaskType, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.TaskSubType, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.TaskDefault, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.TaskDefaultReasonCode, RSUI.Claims.Data" usage="read-only" />
+        
+        -->
+    <!--Claim Instruction Sheet Domain Classes-->
+    <!--
+        <class-cache class="RSUI.Claims.Data.Domain.ClaimInstructionSheetAction, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.ClaimInstructionSheetActionMiscType, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.CloseReason, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.ClaimSuitType, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.ClaimType, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.ClaimSubtype, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.LossType, RSUI.Claims.Data" usage="read-only" />-->
+
+    <!--<class-cache class="RSUI.Claims.Data.Domain.Claim, RSUI.Claims.Data" usage="read-only" />
+        <class-cache class="RSUI.Claims.Data.Domain.ClaimSuffix, RSUI.Claims.Data" usage="read-only" />-->
+  </session-factory>
+
+</hibernate-configuration>

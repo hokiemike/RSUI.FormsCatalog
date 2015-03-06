@@ -1,0 +1,192 @@
+﻿<div class="sidebar filters hide" ui-sidebar-filters>
+	<div class="filters-tab rotate btn-success">FILTERS<i class="icon-pushpin" ng-click="home.toggleFilterPin()"></i></div>
+	<div class="filter-content" ui-slim-scroll>
+		<div>
+			<h3>Document Types</h3>
+		</div>
+		<label>
+			<input type="checkbox" ng-change="home.toggleType()" ng-model="home.checkbox.documentType" /> {{home.checkbox.documentType ? 'Uncheck All' : 'Check All'}}
+		</label>
+		<div ng-repeat="group in home.docTypes track by $index">
+			<div ng-class="group.classes" ng-repeat="item in group.rowData track by $index">
+				<label>
+					<input type="checkbox" ng-change="home.typeToggled(item)" ng-model="item.Selected" /> {{item.DocType}}
+				</label>
+			</div>
+		</div>
+		<div>
+			<h3>Document Categories</h3>
+		</div>
+		<label>
+			<input type="checkbox" ng-change="home.toggleCategory()" ng-model=" home.checkbox.documentCategory" />  {{home.checkbox.documentCategory ? 'Uncheck All' : 'Check All'}}
+		</label>
+		<div ng-repeat="group in home.subTypes track by $index">
+			<div ng-class="group.classes" ng-repeat="item in group.rowData track by $index">
+				<label>
+					<input type="checkbox" ng-change="home.categoryToggled(item)" ng-model="item.Selected" /> {{item.Desc}}
+				</label>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="min-width: 435px; max-width: 950px; margin: 30px auto;">
+	<div class="clearfix">
+		<form name="searchForm" class="form-inline" novalidate="novalidate">
+			<div class="col-md-12">
+				<input type="text" ng-model="home.searchTerm" class="form-control" style="width:100%" data-placeholder="Start Typing a Form's Name or Doc Number" />
+			</div>
+		</form>
+	</div>
+	<div class="mt10">
+		<div accordion close-others="false">
+			<div accordion-group is-open="status.docTypes.open" panel-class="panel-primary sample-show" ng-show="home.filter">
+				<div accordion-heading>
+					Document Types <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.docTypes.open, 'glyphicon-chevron-right': !status.docTypes.open}"></i>
+				</div>
+				<label>
+					<input type="checkbox" ng-change="home.toggleType()" ng-model="home.checkbox.documentType" /> {{home.checkbox.documentType ? 'Uncheck All' : 'Check All'}}
+				</label>
+				<div ng-repeat="group in home.docTypes track by $index">
+					<div ng-class="group.classes" ng-repeat="item in group.rowData track by $index">
+						<label>
+							<input type="checkbox" ng-change="home.typeToggled(item)" ng-model="item.Selected" /> {{item.DocType}}
+						</label>
+					</div>
+				</div>
+			</div>
+			<div accordion-group is-open="status.subTypes.Open" panel-class="panel-primary sample-show" ng-show="home.filter">
+				<div accordion-heading>
+					Document Categories <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.subTypes.Open, 'glyphicon-chevron-right': !status.subTypes.Open}"></i>
+				</div>
+				<label>
+					<input type="checkbox" ng-change="home.toggleCategory()" ng-model=" home.checkbox.documentCategory" />  {{home.checkbox.documentCategory ? 'Uncheck All' : 'Check All'}}
+				</label>
+				<div ng-repeat="group in home.subTypes track by $index">
+					<div ng-class="group.classes" ng-repeat="item in group.rowData track by $index">
+						<label>
+							<input type="checkbox" ng-change="home.categoryToggled(item)" ng-model="item.Selected" /> {{item.Desc}}
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="tabbable">
+	<ul class="nav nav-tabs" ui-tabs>
+		<li class="active"><a href="#whatsNewContent" data-toggle="tab"><i class="icon-drawer3"></i> What's New?</a></li>
+		<li><a id="formsContentTab" href="#formsContent" data-toggle="tab"><i class="icon-file6"></i> Forms Library</a></li>
+		<li><a href="#selectedFormsContent" data-toggle="tab"><i class="icon-folder"></i> Selected Forms ({{home.selectedForms.length}})</a></li>
+		<div class="btn-group pull-right" data-toggle="buttons">
+			<label class="btn btn-xs btn-primary active" style="width: 65px;" ng-click="home.admittedFilter('all')">
+				<input type="radio" name="options" id="option1"> All
+			</label>
+			<label class="btn btn-xs btn-success" style="width: 125px;" ng-click="home.admittedFilter('true')">
+				<input type="radio" name="options" id="option2" ng-value="admitted" ng-model="home.admitted"> Admitted
+			</label>
+			<label class="btn btn-xs btn-success" style="width: 125px;" ng-click="home.admittedFilter('false')">
+				<input type="radio" name="options" id="option3" ng-value="notAdmitted" ng-model="home.admitted"> Non-Admitted
+			</label>
+		</div>
+		<div class="pull-right" style="margin-right: 20px;">
+			<label class="btn btn-xs" ng-class="{'btn-success': !home.includeInactive, 'btn-primary': home.includeInactive}" style="width: 125px;" ng-click="home.toggleInactive()">
+				{{home.inactiveButtonTitle}}
+			</label>
+		</div>
+	</ul>
+	<div class="tab-content with-padding">
+		<div class="tab-pane active fade in" id="whatsNewContent">
+			<div class="datatable">
+				<table id="whatsNewTable" class="table table-bordered" ui-datatables="home.whatsNewTableOptions">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Name</th>
+							<th>Doc Type</th>
+							<th>Categories</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+		<div class="tab-pane fade in" id="formsContent">
+			<div class="datatable">
+				<table id="formTable" class="table table-bordered" ui-datatables="home.formTableOptions">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Name</th>
+							<th>Doc Type</th>
+							<th>Categories</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+		<div class="tab-pane fade in" id="selectedFormsContent">
+			<div ng-show="home.savedCollections.length > 0" class="panel panel-default mb20">
+				<div class="panel-heading">
+					<h6 class="panel-title"><i class="icon-drawer2" style="color: red;"></i> Saved Document Collections</h6>
+				</div>
+				<div class="panel-body">
+					<select ui-select2="home.savedCollectionOptions" ng-model="home.selectedSavedCollection" data-placeholder="Select a Saved Document Collection" style="width: 100%" class="select-full">
+						<option value=""></option>
+						<option ng-repeat="collection in home.savedCollections" value="{{collection.name}}">{{collection.name}}</option>
+					</select>
+				</div>
+			</div>
+			<div ng-show="home.zipRequested || home.zipFiles.length > 0" class="bg-success with-padding block-inner zip-block">
+				<div ng-repeat="form in home.zipFiles track by $index">
+					<h5><a ng-href="{{form.Url}}" target="_blank" class="zip-click-to-download"><i class="icon-download"></i> Click Here to Download Your Zip File</a> <div class="btn btn-primary btn-xxs toggle-zip-details" ng-click="home.toggleZipDetails(form)">View Details</div></h5>
+					<div ng-show="form.showDetails" class="zip-form-details">
+						<h5>Included Forms</h5>
+						<div ng-repeat="includedForm in form.Forms" class="zip-form-names">
+							{{includedForm.Name}}
+						</div>
+						<div ng-show="form.InvalidForms">
+							<h5>Forms Not Included</h5>
+							<div ng-repeat="includedForm in form.InvalidForms" ng-bind="includedForm.Name" class="zip-form-names"></div>
+						</div>
+					</div>
+				</div>
+				<h4 ng-show="home.zipRequested" class="download-requested">
+					Your Download Has Been Requested.<br /><span>You will see your download link here when it is ready.</span>
+				</h4>
+			</div>
+			<div ng-show="home.downloadFailed" class="bg-danger with-padding block-inner">
+				<h4 class="download-zip">
+					Your Download Failed Creation:
+					{{home.downloadFailed}}
+				</h4>
+			</div>
+			<div id="selectedDocs" class="panel panel-default">
+				<div class="panel-heading">
+					<h6 class="panel-title">Selected Forms</h6>
+					<div class="pull-right selected-forms-buttons" ng-show="home.selectedForms.length">
+						<div class="btn btn-xs btn-danger" ng-click="home.clearSelectedForms()"><i class="icon-remove5"></i><span>Clear All</span></div>
+						<div class="btn btn-xs btn-success" ng-click="home.getZipDownload()"><i class="icon-file-download"></i><span>Zip</span></div>
+						<div class="btn btn-xs btn-success" ng-click="home.saveCollection()" ng-disabled="home.selectedForms.length < 2 || vm.selectedSavedCollection"><i class="icon-disk"></i><span>Save Collection</span></div>
+						<div ng-show="home.canEmailForms()" class="btn btn-xs btn-success ng-hide" ng-click="home.showEmailModal()" ng-disabled="home.selectedForms.length < 1"><i class="icon-disk"></i><span>Email Forms</span></div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="selected-forms-empty" ng-hide="home.selectedForms.length"><h2>No Forms Currently Selected</h2></div>
+					<div id="selected-forms" ng-show="home.selectedForms.length">
+						<div ng-repeat="form in home.selectedForms track by form.DocID">
+							<div class="form-list-item">
+								<div class="pull-left"><i ng-class="{'icon-file-pdf pdf-form-item': form.FileType == 'PDF', 'icon-file-word pdf-form-item': form.FileType != 'PDF'}"></i></div>
+								<div class="form-item-data">
+									<div class="form-item-actions" ng-show="form.selected">
+										<div class="btn btn-danger btn-xs" ng-click="home.removeItem(form)"><i class="icon-minus"></i></div>
+									</div>
+									<a href="javascript:void(0);" ng-click="home.getForm(form.DocID)" target="_blank"><span class="form-name form-item" ng-bind="form.Name | cut:true:75"></span></a><br />
+									Doc #: <span class="form-subitem form-item" ng-bind="form.DocNumber"></span>  Effective Date: <span class="form-subitem form-item" ng-bind="form.EffectiveDate | date: 'shortDate'"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

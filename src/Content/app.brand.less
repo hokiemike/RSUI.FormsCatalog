@@ -1,0 +1,27 @@
+﻿@import 'app.vars.less';
+@import 'app.mixins.less';
+
+.dropdown-menu {
+
+  > .active {
+
+    > a:hover,
+    > a:focus {
+      background-color: @rsui-blue;
+	  .box-shadow(~'1px 0 0 @{rsui-blue}, -1px 0 0 @{rsui-blue}');
+    }
+  }
+}
+
+.app-menu {
+  padding: 15px 10px;
+  display: block;
+  background-color: #2D3A42;
+  color: white;
+  text-align: center;
+  width: 100%;
+
+  h1, h2, h3 {
+    margin: 0;
+  }
+}

@@ -1,0 +1,1 @@
+﻿angular.module('home.controllers', ['common.services', 'account.services']);

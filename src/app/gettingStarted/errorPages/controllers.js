@@ -1,0 +1,1 @@
+﻿angular.module('gettingStarted.errorPages.controllers', ['common.services', 'account.services']);

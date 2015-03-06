@@ -1,0 +1,26 @@
+﻿<div id="iconified_modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><i class="icon-accessibility"></i> Modal with icons</h4>
+      </div>
+      <div class="modal-body with-padding">
+        <div class="alert alert-danger block-inner">
+          <i class="icon-cogs"></i> Alert inside modal sample
+          <button type="button" class="close" data-dismiss="alert">×</button>
+        </div>
+        <h5><i class="icon-text-height"></i> Sample heading with icon</h5>
+        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <hr>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p>Scope Message: {{vm.message}}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="vm.closeModal('iconified')"><i class="icon-cancel-circle"></i> Close</button>
+        <button class="btn btn-primary" ng-click="vm.closeModal('iconified',{action: 'Saved'})"><i class="icon-checkmark-circle"></i> Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+

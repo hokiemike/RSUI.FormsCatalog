@@ -1,0 +1,1 @@
+﻿angular.module('gettingStarted.controllers', ['common.services', 'account.services']);

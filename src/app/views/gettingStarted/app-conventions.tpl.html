@@ -1,0 +1,570 @@
+﻿<div class="tabbable page-tabs">
+	<ul class="nav nav-tabs border" ui-tabs>
+		<li class="active"><a href="#global" data-toggle="tab"><i class="icon-globe"></i> App Constants</a></li>
+		<li><a href="#preset" data-toggle="tab"><i class="icon-quill2"></i> Folder Structure</a></li>
+		<li><a href="#state" data-toggle="tab"><i class="icon-settings"></i> Page Header</a></li>
+		<li><a href="#settings" data-toggle="tab"><i class="icon-wrench2"></i> Breadcrumbs</a></li>
+	</ul>
+	<div class="tab-content border">
+		<div class="tab-pane active fade in" id="global">
+			
+			<div class="tabbable">
+				<ul class="nav nav-pills nav-justified" ui-tabs>
+					<li class="active"><a href="#justified-pill1" data-toggle="tab"><i class="icon-accessibility"></i> Home</a></li>
+					<li class=""><a href="#justified-pill2" data-toggle="tab"><i class="icon-stack"></i> Profile <span class="label label-danger">12</span></a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-sun2"></i> Dropdown <b class="caret"></b></a>
+						<ul class="dropdown-menu" style="display: none;">
+							<li class=""><a href="#justified-pill3" tabindex="-1" data-toggle="tab">@fat</a></li>
+							<li><a href="#justified-pill4" tabindex="-1" data-toggle="tab">@mdo</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<div class="tab-content pill-content">
+					<div class="tab-pane fade active in" id="justified-pill1">
+						Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+					</div>
+
+					<div class="tab-pane fade" id="justified-pill2">
+						Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+					</div>
+
+					<div class="tab-pane fade" id="justified-pill3">
+						Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+					</div>
+
+					<div class="tab-pane fade" id="justified-pill4">
+						Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+					</div>
+				</div>
+			</div>
+
+			<ul class="nav nav-tabs border color-rsui" ui-tabs>
+				<li class="active"><a href="#allConstantsTab" data-toggle="tab"><i class="icon-globe"></i> All Constants</a></li>
+				<li><a href="#select2Tab" data-toggle="tab"><i class="icon-quill2"></i> Select2</a></li>
+				<li><a href="#layoutSettingsTab" data-toggle="tab"><i class="icon-settings"></i> Layout Settings</a></li>
+				<li><a href="#appSettingsTab" data-toggle="tab"><i class="icon-wrench2"></i> App Settings</a></li>
+				<li><a href="#utilsTab" data-toggle="tab"><i class="icon-wrench2"></i> Utils</a></li>
+			</ul>
+			<div class="tab-content border">
+				<div class="tab-pane fade in" id="allConstantsTab">
+					<div>When creating your web application, you can set the default layour simply by changing the preset in app.routes.js. When doing this, all pages will inherient the states and you simply need to change our the main-content with your page.</p></div>
+					<h5 class="text-info mt20">Adjust Line #4 as seen below:</h5>
+					<pre class="prettyprint linenums" starting-line-number="1">
+(function (module) {
+  'use strict';
+  module
+    .constant("Select2Options", {
+      baseSelect2InitOptions: {
+        allowClear: true,
+        minimumResultsForSearch: 6,
+        initSelection: function (element, callback) {
+          var data = { id: element.val(), text: element.val() };
+          callback(data);
+        }
+      },
+      baseSelect2ObjectInitOptions: {
+        allowClear: true,
+        minimumResultsForSearch: 6,
+        initSelection: function (element, callback) {
+          var data = { id: element.val().id, text: element.val().text };
+          callback(data);
+        }
+      }
+    })
+    .constant("LayoutSettings", {
+      classes: {
+        body: {
+          navbarSidebar: '',
+          navbarSidebarRight: 'sidebar-right',
+          navbarFixed: 'navbar-fixed',
+          navbarFixedSidebarFixed: 'navbar-fixed sidebar-fixed',
+          navbarFixedSidebarRight: 'navbar-fixed sidebar-right',
+          navbarFixedSidebarRightFixed: 'navbar-fixed sidebar-right sidebar-fixed',
+          sidebarRight: 'sidebar-right',
+          sidebarRightFixed: 'sidebar-right sidebar-fixed',
+          blankPage: 'full-width page-condensed'
+        },
+        navbar: {
+          navbar: 'navbar navbar-inverse',
+          navbarFixed: 'navbar navbar-inverse navbar-fixed-top',
+        },
+        sidebar: {
+          sidebar: 'navigation',
+          sidebarLeftIcons: 'navigation navigation-icons-left'
+        }
+      },
+      containers: {
+        navbar: {
+          templateUrl: '/app/views/layout/layout-navbar.tpl.html'
+        },
+        navbarSidebar: {
+          templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+        },
+        sidebar: {
+          templateUrl: '/app/views/layout/layout-sidebar.tpl.html'
+        }
+      },
+      views: {
+        navbars: {
+          'default': '/app/layout/navbars/layout-navbars-default.tpl.html'
+        },
+        sidebars: {
+          'default': '/app/layout/navbars/layout-sidebars-default.tpl.html',
+          sidebarOnly: '/app/layout/navbars/layout-sidebars-sidebar-only.tpl.html'
+        },
+        footers: {
+          'default': '/app/layout/navbars/layout-footers-default.tpl.html',
+        },
+        breadcrumbs: {
+          'default': '/app/layout/navbars/layout-breadcrumbs-default.tpl.html',
+        },
+        pageHeaders: {
+          'default': '/app/layout/navbars/layout-page-headers-default.tpl.html',
+        }
+      },
+      presets: {
+        navbarSidebar: {
+          classes: {
+            body: '',
+            navbar: 'navbar navbar-inverse',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-default.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-default.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        navbarSidebarFixed: {
+          classes: {
+            body: 'sidebar-fixed',
+            navbar: 'navbar navbar-inverse',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-default.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-default.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        navbarSidebarRight: {
+          classes: {
+            body: 'sidebar-right',
+            navbar: 'navbar navbar-inverse',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-default.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-default.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        navbarSidebarRightFixed: {
+          classes: {
+            body: 'sidebar-right sidebar-fixed',
+            navbar: 'navbar navbar-inverse',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-default.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-default.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        navbarFixedSidebar: {
+          classes: {
+            body: 'navbar-fixed',
+            navbar: 'navbar navbar-inverse navbar-fixed-top',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-default.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-default.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        navbarFixedSidebarFixed: {
+          classes: {
+            body: 'navbar-fixed sidebar-fixed',
+            navbar: 'navbar navbar-inverse navbar-fixed-top',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-default.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-default.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        navbarFixedSidebarRight: {
+          classes: {
+            body: 'navbar-fixed sidebar-right',
+            navbar: 'navbar navbar-inverse navbar-fixed-top',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-default.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-default.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        navbarFixedSidebarRightFixed: {
+          classes: {
+            body: 'navbar-fixed sidebar-right sidebar-fixed',
+            navbar: 'navbar navbar-inverse navbar-fixed-top',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar-sidebar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-default.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-default.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        navbar: {
+          classes: {
+            body: 'full-width',
+            navbar: 'navbar navbar-inverse'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-navbar.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        navbarFixed: {
+          classes: {
+            body: 'navbar-fixed full-width',
+            navbar: 'navbar navbar-inverse navbar-fixed-top'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-navbar.tpl.html'
+            },
+            navbar: {
+              templateUrl: '/app/views/layout/navbars/layout-navbars-navbar.tpl.html',
+              controller: 'LayoutNavbarCtrl as navbar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        sidebar: {
+          classes: {
+            body: 'sidebar-only',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-sidebar.tpl.html'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-sidebar.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        sidebarFixed: {
+          classes: {
+            body: 'sidebar-only sidebar-fixed',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-sidebar.tpl.html'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-sidebar.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        sidebarRight: {
+          classes: {
+            body: 'sidebar-only sidebar-right',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-sidebar.tpl.html'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-sidebar.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        sidebarRightFixed: {
+          classes: {
+            body: 'sidebar-only sidebar-right sidebar-fixed',
+            sidebar: 'navigation navigation-icons-left'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-sidebar.tpl.html'
+            },
+            sidebar: {
+              templateUrl: '/app/views/layout/sidebars/layout-sidebars-sidebar.tpl.html',
+              controller: 'LayoutSidebarCtrl as sidebar'
+            },
+            pageHeader: {
+              templateUrl: '/app/views/layout/page-headers/layout-page-headers-default.tpl.html'
+            },
+            breadcrumbs: {
+              templateUrl: '/app/views/layout/breadcrumbs/layout-breadcrumbs-default.tpl.html'
+            },
+            footer: {
+              templateUrl: '/app/views/layout/footers/layout-footers-default.tpl.html'
+            }
+          }
+        },
+        error: {
+          classes: {
+            body: 'full-width page-condensed error-page'
+          },
+          views: {
+            container: {
+              templateUrl: '/app/views/layout/layout-error.tpl.html'
+            }
+          }
+        },
+      },
+      screen: {
+        console: true,
+        eventPrefix: "fa",
+        breakpoint: {
+          "lg": 1200,
+          "md": 992,
+          "sm": 768,
+          "xs": 480
+        }
+      }
+    })
+	.constant("AppSettings", {
+	  appName: 'VS Project Template',
+	  appErrorPrefix: '[App Error] ',
+	  docTitlePrefix: 'RSUI: ',
+	  version: '1.0.0',
+	  showToastr: true,
+	  toggleOffCanvasOnClick: true,
+	  events: {
+	    controllerActivateSuccess: 'controller.activateSuccess',
+	    spinnerToggle: 'spinner.toggle'
+	  }
+	})
+	.constant("Utils", {
+	  keyCodes: {
+	    backspace: 8,
+	    tab: 9,
+	    enter: 13,
+	    esc: 27,
+	    space: 32,
+	    pageup: 33,
+	    pagedown: 34,
+	    end: 35,
+	    Home: 36,
+	    left: 37,
+	    up: 38,
+	    right: 39,
+	    down: 40,
+	    insert: 45,
+	    del: 46
+	  }
+	});
+})(angular.module('app.constants'));
+</pre>
+				</div>
+			</div>
+
+		</div>
+		<div class="tab-pane fade in" id="preset">
+		</div>
+		<div class="tab-pane fade in" id="state">
+		</div>
+		<div class="tab-pane fade in" id="settings">
+		</div>
+	</div>
+</div>
