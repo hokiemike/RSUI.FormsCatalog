@@ -24,7 +24,7 @@
 				{ id: 10007, text: 'Alt Structures' },
 				{ id: 10006, text: 'Binding Authority' },
 				{ id: 300, text: 'Directors & Officers Liability' },
-				{ id: 1800, text: 'GL' },
+				{ id: 1800, text: 'GL ' },
 				{ id: 1900, text: 'Professional Liability' },
 				{ id: 200, text: 'Property' },
 				{ id: 100, text: 'Umbrella/Excess' }
